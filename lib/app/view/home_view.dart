@@ -1,6 +1,5 @@
 import 'package:conversoraapp/app/controllers/home_controller.dart';
 import 'package:conversoraapp/app/widgets/box_input.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -14,7 +13,8 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   initState() {
-    homeController = HomeController(toText: toText, fromText: fromText);
+    homeController =
+        HomeController(toText: toText, fromText: fromText, context: context);
     super.initState();
   }
 
@@ -59,18 +59,23 @@ class _HomeViewState extends State<HomeView> {
               height: 40,
             ),
             Container(
-                width: MediaQuery.of(context).size.width * 0.7,
-                height: 60,
-                child: ElevatedButton(
-                    onPressed: () {
-                      homeController.convert();
-                    },
-                    style: ButtonStyle(
-                        textStyle: MaterialStateProperty.all(TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20)),
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.amber)),
-                    child: Text('Converter')))
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: 60,
+              child: ElevatedButton(
+                onPressed: () {
+                  homeController.convert();
+                },
+                style: ButtonStyle(
+                  textStyle: MaterialStateProperty.all(
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  backgroundColor: MaterialStateProperty.all(Colors.amber),
+                ),
+                child: Text(
+                  'Converter',
+                ),
+              ),
+            )
           ],
         ),
       ),
