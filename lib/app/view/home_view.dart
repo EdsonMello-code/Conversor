@@ -1,6 +1,8 @@
 import 'package:conversoraapp/app/controllers/home_controller.dart';
+import 'package:conversoraapp/app/utils/format_property.dart';
 import 'package:conversoraapp/app/widgets/box_input.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class HomeView extends StatefulWidget {
@@ -24,6 +26,8 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
+    final formatProperty = context.read<FormatProperty>();
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -66,10 +70,10 @@ class _HomeViewState extends State<HomeView> {
                   homeController.convert();
                 },
                 style: ButtonStyle(
-                  textStyle: MaterialStateProperty.all(
+                  textStyle: formatProperty(
                     TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
-                  backgroundColor: MaterialStateProperty.all(Colors.amber),
+                  backgroundColor: formatProperty(Colors.amber),
                 ),
                 child: Text(
                   'Converter',

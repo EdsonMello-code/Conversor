@@ -1,4 +1,4 @@
-import 'package:conversoraapp/app/view/app_widget.dart';
+import 'package:conversoraapp/app/app_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
