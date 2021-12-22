@@ -1,4 +1,4 @@
-import 'package:conversoraapp/app/models/Currency_model.dart';
+import 'package:conversoraapp/app/models/currency_model.dart';
 import 'package:flutter/material.dart';
 
 class BoxInput extends StatelessWidget {
@@ -7,13 +7,13 @@ class BoxInput extends StatelessWidget {
   final TextEditingController controller;
   final void Function(CurrencyModel? model) onChanged;
 
-  BoxInput(
-      {Key? key,
-      required this.items,
-      required this.controller,
-      required this.onChanged,
-      required this.selectedItem})
-      : super(key: key);
+  BoxInput({
+    Key? key,
+    required this.items,
+    required this.controller,
+    required this.onChanged,
+    required this.selectedItem,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

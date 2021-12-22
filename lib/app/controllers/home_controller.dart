@@ -1,4 +1,4 @@
-import 'package:conversoraapp/app/models/Currency_model.dart';
+import 'package:conversoraapp/app/models/currency_model.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomeController {
